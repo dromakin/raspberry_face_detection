@@ -3,7 +3,7 @@ import subprocess
 import datetime
 
 
-def main(filename: str = None):
+def take_photo(filename: str = None):
     if filename is None:
         filename = '/home/pi/Desktop/image.jpg'
 
@@ -16,7 +16,7 @@ if __name__ == '__main__':
     date = str(datetime.datetime.now())
     parser.add_argument("-f", "--file", dest="filename",
                         help="write image to file. Use jpg postfix.",
-                        default=f"/home/pi/Documents/face_detection/docs/{date}.jpg")
+                        default=f"/home/pi/Documents/face_detection/db/{date}.jpg")
 
     args = parser.parse_args()
-    main(args.filename)
+    take_photo(args.filename)
